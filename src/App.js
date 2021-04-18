@@ -7,6 +7,7 @@ import Season from './components/seasons';
 import Seasoninfo from './components/seasoninfo';
 import Characterinfo from './components/characterinfo';
 import Episodeinfo from './components/episodeinfo';
+import NotFound from './components/404';
 
 import { AC_LIST_EPISODE , AC_LIST_CHARACTER} from './actions/seriesaction';
 import { connect } from 'react-redux';
@@ -25,12 +26,13 @@ class App extends React.Component{
       <Router>
         <Header/>
         <Switch>
-          <div>
+          
             <Route exact path="/" component={Season}/>
             <Route exact path="/Seasoninfo/:id"    component={Seasoninfo}/>
             <Route exact path="/Characterinfo/:id" component={Characterinfo}/>
             <Route exact path="/Episodeinfo/:id" component={Episodeinfo}/>
-          </div>
+            <Route component={NotFound}/>
+          
         </Switch>
       </Router>
     )
